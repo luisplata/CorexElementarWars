@@ -14,6 +14,8 @@ public class Cell : MonoBehaviour
     public Action OnCellClickedUp;
     private IMediatorInputHandler _inputHandler;
     private bool _isSelect;
+    private bool _isFull;
+    private Card _card;
 
     [ContextMenu("Reset Cell")]
     private void ResetOption()
@@ -54,5 +56,25 @@ public class Cell : MonoBehaviour
     public bool IsSelect()
     {
         return _isSelect;
+    }
+
+    public void IsFull(bool isFull)
+    {
+        _isFull = isFull;
+    }
+    
+    public bool IsFull()
+    {
+        return _isFull;
+    }
+
+    public void SetCard(Card card)
+    {
+        _card = card;
+    }
+
+    public bool IsEqualCard(Card card)
+    {
+        return _card == card;
     }
 }
